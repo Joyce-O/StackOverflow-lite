@@ -1,0 +1,96 @@
+<!Doctype <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="image/favicon.ico" />
+    <title>StackOverflow-lite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <header id="title">
+                <img id="img" src="image/favicon-1024.png" alt="icon" width="40px"> StackOverflow-lite
+            </header>
+            <div>
+                <form class="search" action="/index.html">
+                    <input type="text" placeholder="Search.." id="search">
+                    <button id="btn-search" type="submit">submit</i>
+                    </button>
+                </form>
+            </div>
+            <div class="home">
+                <a id="home" href="#">Home</a>
+                <a id="home" href="#">About</a>
+                <a id="home" href="#">Contact</a>
+            </div>
+            <div class="login-area">
+                <button class="btn join">Join Now</button>
+                <button class="btn login">Login</button>
+            </div>
+        </div>
+        <div class="main">
+            <aside>
+                <div class="sidebar-1">
+                    <button class="btn ask">Ask a question</button>
+                    <ul class="left_bar">
+                        <li>
+                            <a id="top" href="#content"> Top Questions</a>
+                        </li>
+                        <li>
+                            <a href="#">Users</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="content">
+                <fieldset class="fieldset">
+                    <form class="form form1">
+                        <div class="quest_box">
+                            <label for="title">Title</label>
+                            <textarea id="title" placeholder="Enter your sentence..." required>                   
+                                    </textarea>
+                            <label for="body">Body</label>
+                            <textarea id="body" placeholder="Enter your sentence..." required>                   
+                                    </textarea>
+                            <label for="tags">Tags</label>
+                            <textarea id="tags" placeholder="Enter your sentence..." required>                   
+                                    </textarea>
+                            </br>
+                            <button class="btn" type="button" onclick="displayWord()">submit</button>
+                        </div>
+                    </form>
+                </fieldset>
+            </section>
+            <aside>
+                <div class="sidebar-2">
+                    <ul class="widget-statistic">
+                        <li id="questions-count">
+                            <p>Questions</p>
+                            <p>
+                                <span>20</span>
+                            </p>
+                        </li>
+                        <li class="members-count">
+                            <p>Members</p>
+                            <span>10</span>
+                            </p>
+                        </li>
+                        <a id="link" href="#">Jobs</a>
+                    </ul>
+
+                </div>
+            </aside>
+        </div>
+
+</body>
+
+</html>
