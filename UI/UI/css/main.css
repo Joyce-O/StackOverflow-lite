@@ -8,20 +8,84 @@
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .header {
     justify-content: center;
     align-items: center;
+    height: 100px;
     display: grid;
     background: #3700B3;
     grid-auto-flow: column;
-    position: relative;
-    grid-template-columns: 3fr 5fr 3fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 5px;
     color: white;
    
+}
+
+p {
+    color: rgb(24, 23, 26);
+
+} 
+
+.btn {
+    /* to give the curved edge for the btn */
+font-family: Arial;
+color: #070000;
+font-size: 18px;
+padding: 4px;
+margin: 5px;
+height: auto;
+text-decoration: none;
+}
+#title {
+    color: ghostwhite;
+    height: 40px;
+    font-style: bold;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left:20px; 
+   }
+   #img{
+       max-width: 40px;
+
+   }
+
+   .search {
+    display: grid;
+    grid-template-columns: 40% 10%;
+    justify-content: center;
+    align-content: center;
+    margin-left: 8px;
+}
+#search {
+    border-radius: 7px;
+    width: 180px;
+    height: 40px;
+}
+
+#btn-search {
+    width: 45px;
+    border-radius: 7px;
+    height: 40px;
+    display: inline-block;
+
+}
+/* Fixes submit button height problem in Firefox */
+.btn::-moz-focus-inner {
+    border: 0;
+}
+.login {
+  color: white;
+  background: none;
+}
+
+#home {
+    text-decoration: none;
+    color: rgb(244, 250, 248);
+    padding-right: 10px;
+    font-size: 18px;
 }
 
 .main {
@@ -34,54 +98,4 @@
     grid-gap: 10px;
     border-left-color: 1px solid grey;
 
-}
-
-#tsheader{
-
-}
-#tsnewsearch{
-    padding:20px;
-}
-.tstextinput{
-    margin: 0;
-    height: 40px;
-    padding: 5px 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:14px;
-    color:#666;
-    border:1px solid #0076a3; border-right:0px;
-    border-top-left-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
-}
-.tsbutton {
-    margin: 0;
-    height: 40px;
-    padding: 5px 7px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:14px;
-    font-weight:bold;
-    outline: none;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff;
-    border: solid 1px #0076a3; border-right:0px;
-    background: #0095cd;
-    background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-    background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-    border-top-right-radius: 5px 5px;
-    border-bottom-right-radius: 5px 5px;
-}
-.tsbutton:hover {
-    text-decoration: none;
-    background: #007ead;
-    background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-    background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-}
-/* Fixes submit button height problem in Firefox */
-.tsbutton::-moz-focus-inner {
-  border: 0;
-}
-.tsclear{
-    clear:both;
 }

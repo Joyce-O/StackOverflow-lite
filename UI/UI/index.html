@@ -10,18 +10,19 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="main.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <header id="title">
                 <img id="img" src="image/favicon-1024.png" alt="icon" width="40px"> StackOverflow-lite
             </header>
-            <div id="tsheader">
-                <form id="tsnewsearch" method="get" action="http://www.google.com">
-                    <input type="text" id="tsq" class="tstextinput" name="q" value="Search our website">
-                    <input type="submit" value="Search" class="tsbutton">
+            <div>
+                <form class="search" action="/index.html">
+                    <input type="text" placeholder="Search.." id="search">
+                    <button id="btn-search" type="submit">submit</i>
+                    </button>
                 </form>
-                <div class="tsclear"></div>
             </div>
             <div class="home">
                 <a id="home" href="#">Home</a>
