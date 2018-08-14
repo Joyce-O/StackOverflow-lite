@@ -145,7 +145,7 @@ text-decoration: none;
 }
 .form {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 5px;
     font-size: 20px;
     margin-left: 10px;
@@ -180,4 +180,15 @@ li {
 .ques-btn {
     width: 60px;
     margin: 40px; 
+ }
+
+ #join {
+     width: fit-content;
+     font-size: 18px;
+ }
+
+ #login {
+     color: darkblue;
+     padding: 10px;
+     margin-right: 5px;
  }
