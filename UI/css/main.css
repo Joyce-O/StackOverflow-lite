@@ -160,25 +160,26 @@ li {
 
 .ask-ques {
     display: grid;
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
 
 }
 
 #ques-body {
-    width: 100%;
+    width: 80%;
     height: 100%;
     margin: 20px;
 
 }
 #ques-title {
-   width: 100%;
+   width: 80%;
    margin: 10px; 
 }
 
 .ques-btn {
-    width: 60px;
-    margin: 40px; 
+    width: 70px;
+    margin: 80px;
+    height: 50px; 
  }
 
  #join {
