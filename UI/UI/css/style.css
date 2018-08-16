@@ -227,6 +227,14 @@ text-decoration: none;
       padding: 10px;
 
   }
+  .quest button {
+       margin-top: 20px;
+       font-size: 18px;
+       background-color: #C15044;
+       border: none;
+       padding: 3px;
+
+  }
   .asker {
       text-align-last: end;
       color: #3700B3;
