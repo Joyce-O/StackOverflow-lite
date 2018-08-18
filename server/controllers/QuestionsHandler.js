@@ -7,6 +7,17 @@ class QuestionsHandler {
             message: 'List of all questions', questions
         });
     }
+
+    static getQuestion(request, response) {
+        const {requestedQues} = request.body;
+        response.status(200)
+          .json({
+            message: 'Request was successful',
+            requestedQues
+          });
+      
+    }
+    
 }
 
 export default QuestionsHandler;

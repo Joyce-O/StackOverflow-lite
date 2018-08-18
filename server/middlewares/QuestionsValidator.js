@@ -2,7 +2,7 @@ import questions from '../sessionData/questionsObj';
 
 
 class QuestionsValidator {
-
+//Validates questionId
     static getQuestionValidator (request, response, next) {
         const {questionsId} = request.params;
         const requestedQues = questions.find(question => question.id === parseInt(questionsId, 10));
@@ -15,7 +15,7 @@ class QuestionsValidator {
             });
         }
         request.body.requestedQues = requestedQues;
-        next();
+        next();//End question validation
     }
 }
 
