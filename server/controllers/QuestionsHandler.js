@@ -8,3 +8,5 @@ class QuestionsHandler {
         });
     }
 }
+
+export default QuestionsHandler;
