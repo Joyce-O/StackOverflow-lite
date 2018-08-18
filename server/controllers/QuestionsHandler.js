@@ -59,7 +59,16 @@ class QuestionsHandler {
           requestedQues
         });
     }
-  
+    
+    static deleteQuestion(request, response) {
+      const { requestedQues } = request.body;
+      questions.splice(requestedQues.id - 1, 1);
+      return response.status(200)
+        .json({
+          message: `Question with title '${requestedQues.title}' has been deleted`,
+          questions
+        });
+    }
     
 }
 
