@@ -59,6 +59,7 @@ class QuestionsHandler {
           requestedQues
         });
     }
+
     static deleteQuestion(request, response) {
       const { requestedQues } = request.body;
       questions.splice(requestedQues.id - 1, 1);
@@ -67,8 +68,7 @@ class QuestionsHandler {
           message: `Question with title '${requestedQues.title}' has been deleted`,
           questions
         });
-    }  
-    
+    }
 }
 
 export default QuestionsHandler;

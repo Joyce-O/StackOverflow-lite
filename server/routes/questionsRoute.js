@@ -5,7 +5,6 @@ import QuestionsValidator from '../middlewares/QuestionsValidator';
 const { getAllQuestions, getQuestion, postQuestion, postAnswer, deleteQuestion } = questionsClass;
 const { getQuestionValidator, postQuestionValidator, postAnswerValidator,  } = QuestionsValidator;
 
-
 const router = express.Router();
 
 router.get('/questions', getAllQuestions);
