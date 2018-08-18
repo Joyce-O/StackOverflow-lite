@@ -17,6 +17,23 @@ class QuestionsHandler {
           });
       
     }
+
+    static postQuestion(request, response) {
+        const { title, content, tag } = request.body;
+        const id = questions[questions.length - 1].id + 1;
+        const newQuestion = {
+          id,
+          title,
+          content,
+          tag
+        };
+        questions.push(newQuestion);
+        response.status(201)
+          .json({
+            message: 'Question has been recorded',
+            newQuestion
+          });
+      }
     
 }
 
