@@ -9,6 +9,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 console.log('HEREER');
 app.use('/api/v1', router);
 
+router.all('/*', (request, response) => {
+    response.status(404)
+      .json({
+        status: 'Error',
+        message: 'Page not found!'
+      });
+  });
+
 
 const port = process.env.PORT || 3300;
 
