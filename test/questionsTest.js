@@ -79,3 +79,24 @@ const emptyAnswer = {
 const answerLength = {
     newAnswer: 'ik'
 };
+
+
+describe("StackOverflow-lite", () => {
+
+    describe("General test for wrong api endpoint", () => {
+        describe('Test for Homepage', () => {
+            it('It should return the specified welcome message and status 200', (done) => {
+              chai.request(app)
+                .get('/api/v1')
+                .end((error, response) => {
+                  expect(response).to.have.status(200);
+                  expect(response.body.message).to.equal('This is stackOverflow-lite. Post questions, view questions, post answers, and view answers to question');
+                  done();
+                });
+            });
+        });
+
+        
+    });
+});
+        
