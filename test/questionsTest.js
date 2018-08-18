@@ -96,7 +96,18 @@ describe("StackOverflow-lite", () => {
             });
         });
 
-        
+        describe('Test for Undefined URL', () => {
+            it('It should return status code 404', (done) => {
+              chai.request(app)
+                .get('/api/v1/undefined')
+                .end((error, response) => {
+                  expect(response).to.have.status(404);
+                  done();
+                });
+            });
+        });
+          
+
     });
 });
         
