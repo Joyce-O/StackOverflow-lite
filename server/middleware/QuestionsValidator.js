@@ -18,3 +18,5 @@ class QuestionsValidator {
         next();
     }
 }
+
+export default QuestionsValidator;
