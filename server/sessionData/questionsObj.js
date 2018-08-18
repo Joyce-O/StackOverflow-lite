@@ -19,4 +19,4 @@ export default [
         content: 'Can someone clarify the difference between java and javascript?',
         answer: []
       }
-  ];
+];
