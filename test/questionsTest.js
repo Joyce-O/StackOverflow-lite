@@ -216,4 +216,90 @@ describe("StackOverflow-lite", () => {
                 });
         });
     });
+
+    describe('TEST for GET all questions', () => {
+  it('should return 200 for sunccess', (done) => {
+    chai.request(app)
+      .get('/api/v1/questions')
+      .end((error, response) => {
+        expect(response).to.have.status(200);
+        done();
+      });
+  });
+});
+
+describe('TEST for GET a specific question', () => {
+  it('should return 404 for failure', (done) => {
+    chai.request(app)
+      .get('/api/v1/questions/100')
+      .end((error, response) => {
+        expect(response).to.have.status(404);
+        expect(response.body.message).to.equal('Invalid question ID');
+        done();
+      });
+  });
+  it('should return 200 for success', (done) => {
+    chai.request(app)
+      .get('/api/v1/questions/1')
+      .end((error, response) => {
+        expect(response).to.have.status(200);
+        expect(response.body.message).to.equal('Request was successful');
+        done();
+      });
+  });
+});
+
+describe('TEST for POST answers', () => {
+  it('should return 400 for undefined answer', (done) => {
+    chai.request(app)
+      .post('/api/v1/questions/1/answers')
+      .send(undefinedAnswer)
+      .end((error, response) => {
+        expect(response).to.have.status(400);
+        expect(response.body.message).to.equal('Answer cannot be undefined');
+        done();
+      });
+  });
+  it('should return 400 for empty answer', (done) => {
+    chai.request(app)
+      .post('/api/v1/questions/1/answers')
+      .send(emptyAnswer)
+      .end((error, response) => {
+        expect(response).to.have.status(400);
+        expect(response.body.message).to.equal('Answer cannot be empty');
+        done();
+      });
+  });
+  it('should return 400 for invalid answer length', (done) => {
+    chai.request(app)
+      .post('/api/v1/questions/1/answers')
+      .send(answerLength)
+      .end((error, response) => {
+        expect(response).to.have.status(400);
+        expect(response.body.message).to.equal('Answer should be 3 to 300 characters long');
+        done();
+      });
+  });
+  it('should return 404 posting answer on non-existing Question ID', (done) => {
+    chai.request(app)
+      .post('/api/v1/questions/100/answers')
+      .send(correctAnswer)
+      .end((error, response) => {
+        expect(response).to.have.status(404);
+        expect(response.body.message).to.equal('Invalid question ID');
+        done();
+      });
+  });
+  it('should return 201 posting answer successfully', (done) => {
+    chai.request(app)
+      .post('/api/v1/questions/2/answers')
+      .send(correctAnswer)
+      .end((error, response) => {
+        expect(response).to.have.status(201);
+        expect(response.body.message).to.equal('Thank you! Your answer was recorded');
+        done();
+      });
+  });
+});
+
 });
