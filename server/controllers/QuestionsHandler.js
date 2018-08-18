@@ -9,13 +9,14 @@ class QuestionsHandler {
     }
 
     static getQuestion(request, response) {
-        const { requestedQues } = request.body;
+        const {requestedQues} = request.body;
         response.status(200)
           .json({
             message: 'Request was successful',
             requestedQues
           });
-      }
+      
+    }
     
 }
 
