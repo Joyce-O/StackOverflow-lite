@@ -1,14 +1,14 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../app';
-import questions from '../server/sessionData/questionsObj';
+import questions from '../sessionData/questionsObj';
 
 const { expect } = chai;
 
 chai.use(chaiHttp);
 
 const correctQuestion = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     content: 'How do I merge two different git branches to master?',
     tag: 'git'
 };
@@ -19,12 +19,12 @@ const undefinedTitle = {
 };
 
 const undefinedContent = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     tag: 'git'
 };
 
 const undefinedTag = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     content: 'How do I merge two different git branches to master?'
 };
 
@@ -35,13 +35,13 @@ const emptyTitle = {
 };
 
 const emptyContent = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     content: '',
     tag: 'git',
 };
 
 const emptyTag = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     content: 'How do I merge two different git branches to master?',
     tag: '',
 };
@@ -53,13 +53,13 @@ const titleLength = {
 };
 
 const contentLength = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     content: 'How',
     tag: 'git',
 };
 
 const tagLenght = {
-    title: 'How to merge to git branches',
+    title: 'How to merge to git',
     content: 'How do I merge two different git branches to master?',
     tag: 'it',
 };
@@ -116,7 +116,7 @@ describe("StackOverflow-lite", () => {
                 .send(undefinedTitle)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('Title can not be undefined');
+                    expect(response.body.message).to.equal('Title cannot be undefined');
                     done();
                 });
         });
@@ -126,7 +126,7 @@ describe("StackOverflow-lite", () => {
                 .send(emptyTitle)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('Title can not be empty');
+                    expect(response.body.message).to.equal('Title cannot be empty');
                     done();
                 });
         });
@@ -147,7 +147,7 @@ describe("StackOverflow-lite", () => {
                 .send(undefinedContent)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('Content can not be undefined');
+                    expect(response.body.message).to.equal('Content cannot be undefined');
                     done();
                 });
         });
@@ -157,7 +157,7 @@ describe("StackOverflow-lite", () => {
                 .send(emptyContent)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('Content can not be empty');
+                    expect(response.body.message).to.equal('Content cannot be empty');
                     done();
                 });
         });
@@ -178,7 +178,7 @@ describe("StackOverflow-lite", () => {
                 .send(undefinedTag)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('tag can not be undefined');
+                    expect(response.body.message).to.equal('tag cannot be undefined');
                     done();
                 });
         });
@@ -188,7 +188,7 @@ describe("StackOverflow-lite", () => {
                 .send(emptyTag)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('tag can not be empty');
+                    expect(response.body.message).to.equal('tag cannot be empty');
                     done();
                 });
         });
@@ -218,88 +218,108 @@ describe("StackOverflow-lite", () => {
     });
 
     describe('TEST for GET all questions', () => {
-  it('should return 200 for sunccess', (done) => {
-    chai.request(app)
-      .get('/api/v1/questions')
-      .end((error, response) => {
-        expect(response).to.have.status(200);
-        done();
-      });
-  });
-});
+        it('should return 200 for success', (done) => {
+            chai.request(app)
+                .get('/api/v1/questions')
+                .end((error, response) => {
+                    expect(response).to.have.status(200);
+                    done();
+                });
+        });
+    });
 
-describe('TEST for GET a specific question', () => {
-  it('should return 404 for failure', (done) => {
-    chai.request(app)
-      .get('/api/v1/questions/100')
-      .end((error, response) => {
-        expect(response).to.have.status(404);
-        expect(response.body.message).to.equal('Invalid question ID');
-        done();
-      });
-  });
-  it('should return 200 for success', (done) => {
-    chai.request(app)
-      .get('/api/v1/questions/1')
-      .end((error, response) => {
-        expect(response).to.have.status(200);
-        expect(response.body.message).to.equal('Request was successful');
-        done();
-      });
-  });
-});
+    describe('TEST for GET a specific question', () => {
+        it('should return 404 for failure', (done) => {
+            chai.request(app)
+                .get('/api/v1/questions/100')
+                .end((error, response) => {
+                    expect(response).to.have.status(404);
+                    expect(response.body.message).to.equal('Invalid question ID');
+                    done();
+                });
+        });
+        it('should return 200 for success', (done) => {
+            chai.request(app)
+                .get('/api/v1/questions/1')
+                .end((error, response) => {
+                    expect(response).to.have.status(200);
+                    expect(response.body.message).to.equal('Request was successful');
+                    done();
+                });
+        });
+    });
 
-describe('TEST for POST answers', () => {
-  it('should return 400 for undefined answer', (done) => {
-    chai.request(app)
-      .post('/api/v1/questions/1/answers')
-      .send(undefinedAnswer)
-      .end((error, response) => {
-        expect(response).to.have.status(400);
-        expect(response.body.message).to.equal('Answer cannot be undefined');
-        done();
-      });
-  });
-  it('should return 400 for empty answer', (done) => {
-    chai.request(app)
-      .post('/api/v1/questions/1/answers')
-      .send(emptyAnswer)
-      .end((error, response) => {
-        expect(response).to.have.status(400);
-        expect(response.body.message).to.equal('Answer cannot be empty');
-        done();
-      });
-  });
-  it('should return 400 for invalid answer length', (done) => {
-    chai.request(app)
-      .post('/api/v1/questions/1/answers')
-      .send(answerLength)
-      .end((error, response) => {
-        expect(response).to.have.status(400);
-        expect(response.body.message).to.equal('Answer should be 3 to 300 characters long');
-        done();
-      });
-  });
-  it('should return 404 posting answer on non-existing Question ID', (done) => {
-    chai.request(app)
-      .post('/api/v1/questions/100/answers')
-      .send(correctAnswer)
-      .end((error, response) => {
-        expect(response).to.have.status(404);
-        expect(response.body.message).to.equal('Invalid question ID');
-        done();
-      });
-  });
-  it('should return 201 posting answer successfully', (done) => {
-    chai.request(app)
-      .post('/api/v1/questions/2/answers')
-      .send(correctAnswer)
-      .end((error, response) => {
-        expect(response).to.have.status(201);
-        expect(response.body.message).to.equal('Thank you! Your answer was recorded');
-        done();
-      });
-  });
-});
+    describe('TEST for POST answers', () => {
+        it('should return 400 for undefined answer', (done) => {
+            chai.request(app)
+                .post('/api/v1/questions/1/answers')
+                .send(undefinedAnswer)
+                .end((error, response) => {
+                    expect(response).to.have.status(400);
+                    expect(response.body.message).to.equal('Answer cannot be undefined');
+                    done();
+                });
+        });
+        it('should return 400 for empty answer', (done) => {
+            chai.request(app)
+                .post('/api/v1/questions/1/answers')
+                .send(emptyAnswer)
+                .end((error, response) => {
+                    expect(response).to.have.status(400);
+                    expect(response.body.message).to.equal('Answer cannot be empty');
+                    done();
+                });
+        });
+        it('should return 400 for invalid answer length', (done) => {
+            chai.request(app)
+                .post('/api/v1/questions/1/answers')
+                .send(answerLength)
+                .end((error, response) => {
+                    expect(response).to.have.status(400);
+                    expect(response.body.message).to.equal('Answer should be 3 to 300 characters long');
+                    done();
+                });
+        });
+        it('should return 404 posting answer on non-existing Question ID', (done) => {
+            chai.request(app)
+                .post('/api/v1/questions/100/answers')
+                .send(correctAnswer)
+                .end((error, response) => {
+                    expect(response).to.have.status(404);
+                    expect(response.body.message).to.equal('Invalid question ID');
+                    done();
+                });
+        });
+        it('should return 201 posting answer successfully', (done) => {
+            chai.request(app)
+                .post('/api/v1/questions/2/answers')
+                .send(correctAnswer)
+                .end((error, response) => {
+                    expect(response).to.have.status(201);
+                    expect(response.body.message).to.equal('Thank you! Your answer was recorded');
+                    done();
+                });
+        });
+    });
+    describe('TEST DELETE questions API', () => {
+        it('should return 404 for question ID not found', (done) => {
+            chai.request(app)
+                .delete('/api/v1/questions/500')
+                .end((error, response) => {
+                    expect(response).to.have.status(404);
+                    expect(response.body.message).to.equal('Invalid question ID');
+                    done();
+                });
+        });
+        it('should return 200 for question ID not found', (done) => {
+            chai.request(app)
+                .delete('/api/v1/questions/1')
+                .end((error, response) => {
+                    expect(response).to.have.status(200);
+                    expect(response.body.message).to.be.a('string');
+                    done();
+                });
+        });
 
+    });
 });

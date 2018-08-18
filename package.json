@@ -4,7 +4,6 @@
   "description": "StackOverflow-lit is a platform where people can ask questions and provide answers.",
   "main": "app.js",
   "scripts": {
-    "babel": "babel-node --presets=es2015",
     "start": "nodemon --exec babel-node -- ./app.js",
     "test": "nyc --reporter=html --reporter=text mocha server/tests/questionsTest.js --exit --compilers js:babel-core/register"
   },

@@ -30,7 +30,7 @@ class QuestionsHandler {
         questions.push(newQuestion);
         response.status(201)
           .json({
-            message: 'Question has been recorded',
+            message: 'Thank you! Your answer was recorded',
             newQuestion
           });
     }
@@ -59,7 +59,15 @@ class QuestionsHandler {
           requestedQues
         });
     }
-  
+    static deleteQuestion(request, response) {
+      const { requestedQues } = request.body;
+      questions.splice(requestedQues.id - 1, 1);
+      return response.status(200)
+        .json({
+          message: `Question with title '${requestedQues.title}' has been deleted`,
+          questions
+        });
+    }  
     
 }
 
