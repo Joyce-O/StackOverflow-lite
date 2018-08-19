@@ -8,3 +8,5 @@ erl_crash.dump
 *.beam
 /config/*.secret.exs
 /Joyce/
+node_modules/
+.nyc_output/
