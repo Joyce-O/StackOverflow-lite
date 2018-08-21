@@ -28,17 +28,40 @@ p {
     color: rgb(24, 23, 26);
 
 } 
-
-.btn {
-    /* to give the curved edge for the btn */
-font-family: Arial;
-color: #070000;
-font-size: 18px;
-padding: 4px;
-margin: 5px;
-height: auto;
-text-decoration: none;
+#login{
+    background-color: green; 
+    padding: 5px;
+    border-radius: 3px;
 }
+#join {
+        background-color: #f8f5f4;
+        color: rgb(12, 1, 1);
+        padding: 5px;
+        border-radius: 3px;
+        margin-right: 10px;
+}
+button {
+    /* background-color: #f4511e; */
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    outline: none;
+    opacity: 1;
+    transition: 0.3s;
+
+  }
+  
+  button:hover {opacity: 0.6}
+  /* Fixes submit button height problem in Firefox */
+button::-moz-focus-inner {
+    border: 0;
+}
+.login-area {
+    margin-left: 30px;
+}
+   
 #title {
     color: ghostwhite;
     height: 40px;
@@ -69,14 +92,7 @@ text-decoration: none;
     width: 88px;
     height: 30px;
 }
-/* Fixes submit button height problem in Firefox */
-.btn::-moz-focus-inner {
-    border: 0;
-}
-.login {
-  color: white;
-  background: none;
-}
+
 
 #home {
     text-decoration: none;
@@ -180,15 +196,4 @@ li {
     width: 70px;
     margin: 80px;
     height: 50px; 
- }
-
- #join {
-     width: fit-content;
-     font-size: 18px;
- }
-
- #login {
-     color: darkblue;
-     padding: 10px;
-     margin-right: 5px;
- }
+}
