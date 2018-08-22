@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,21 +8,23 @@
     <title>StackOverflow-lite</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <header id="title">
-                <img id="img" src="image/favicon-1024.png" alt="icon" width="40px"> StackOverflow-lite
-            </header>
-            <div>
-                <form class="search" action="/index.html">
-                    <input type="text" placeholder="Search.." id="search">
-                    <button id="search_button" type="submit">submit</i>
-                    </button>
-                </form>
+            <div class="logo-section">
+                <div class="logo">
+                    <img id="img" src="image/favicon-1024.png" alt="icon">
+                </div>
+                <div class="stack">
+                    <p>StackOverflow-lite</p>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text">
+                <input type="submit" value="Search">
             </div>
             <div class="home">
                 <a id="home" href="#">Home</a>
@@ -30,8 +32,8 @@
                 <a id="home" href="#">Contact</a>
             </div>
             <div class="login-area">
-                    <a href="login.html"><button id="login">LOG IN</button></a>
-                    <a><button id="join">Join Now</button></a>
+                <button id="join" onclick="showDiv('signin_form')">Join Now</button>
+                <button id="login" onclick="showDiv('loginbox')">Login</button>
             </div>
         </div>
         <div class="main">
@@ -54,11 +56,25 @@
             <section class="content">
                 <fieldset class="fieldset">
                     <form class="form form1">
-                        <div class="login-area">
-                            <h4><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></h4>
-                    </div>
-                    <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p></div>
-                    <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. </p></div>
+                        <div class="login-area2">
+                            <h4>
+                                <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                            </h4>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
+                                cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+                                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
+                                lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                                per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
+                                cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+                                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
+                                lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                                per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
+                        </div>
                     </form>
                 </fieldset>
             </section>
@@ -81,6 +97,23 @@
 
                 </div>
             </aside>
+
+            <fieldset class="fieldset">
+               <div class="loginbox">
+                  <h1>Login Here</h1>
+                  <form id="signin" action="">
+                    <label for="Username">Username</label>
+                    <input type="text" required name="username" id="username1" placeholder="Enter Username">
+                    <label for="password">Password</label>
+                    <input type="password" required name="password" id="password1" placeholder="Input your password">
+                    <input id="signin-btn" type="submit" value="Submit">
+                    <p>
+                      <a href="signup.html">Don't have an account?</a>
+                    </p>
+                </div>
+                </form>  
+              </form>
+            </fieldset>
         </div>
 
 </body>
