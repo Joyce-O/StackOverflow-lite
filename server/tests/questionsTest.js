@@ -163,6 +163,15 @@ describe("StackOverflow-lite", () => {
                 .get('/api/v1/questions/100')
                 .end((error, response) => {
                     expect(response).to.have.status(404);
+                    expect(response.body.message).to.equal('Question ID not found.');
+                    done();
+                });
+        });
+        it('should return 404 for failure', (done) => {
+            chai.request(app)
+                .get('/api/v1/questions/aa')
+                .end((error, response) => {
+                    expect(response).to.have.status(404);
                     expect(response.body.message).to.equal('Invalid question ID');
                     done();
                 });
@@ -172,7 +181,7 @@ describe("StackOverflow-lite", () => {
                 .get('/api/v1/questions/1')
                 .end((error, response) => {
                     expect(response).to.have.status(200);
-                    expect(response.body.message).to.equal('Request was successful');
+                    expect(response.body.status).to.equal('Successful');
                     done();
                 });
         });
@@ -215,7 +224,7 @@ describe("StackOverflow-lite", () => {
                 .send(correctAnswer)
                 .end((error, response) => {
                     expect(response).to.have.status(404);
-                    expect(response.body.message).to.equal('Invalid question ID');
+                    expect(response.body.message).to.equal('Question ID not found.');
                     done();
                 });
         });
@@ -236,7 +245,7 @@ describe("StackOverflow-lite", () => {
                 .delete('/api/v1/questions/500')
                 .end((error, response) => {
                     expect(response).to.have.status(404);
-                    expect(response.body.message).to.equal('Invalid question ID');
+                    expect(response.body.message).to.equal('Question ID not found.');
                     done();
                 });
         });

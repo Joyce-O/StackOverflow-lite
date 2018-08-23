@@ -36,14 +36,6 @@ class QuestionsHandler {
           });
     }
 
-    // static getQuestion(request, response) {
-    //   const { requestedQues } = request.body;
-    //   response.status(200)
-    //     .json({
-    //       message: 'Request was successful',
-    //       requestedQues
-    //     });
-    // }
     static deleteQuestion(request, response) {
       const { requestedQues } = request.body;
       questions.splice(requestedQues.id - 1, 1);
