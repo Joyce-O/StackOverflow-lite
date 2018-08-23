@@ -9,12 +9,12 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 /api/v1/
 
 ## Table of contents
-- [Features] (#features)
-- [Technologies] (#technologies)
-- [Installation] (#installation)
-- [Start the App] (#start-stackoverflow-lite-app)
-- [Testing] (#testing)
-- [API EndPoints] (#api -end-points)
+- [Features] (# features)
+- [Technologies] (# technologies)
+- [Installation] (# installation)
+- [Start the App] (# start-stackoverflow-lite-app)
+- [Testing] (# testing)
+- [API EndPoints] (# api -end-points)
 
 ## Features
 See features below:
