@@ -38,7 +38,7 @@ join.addEventListener('click', switchForm);
 toggleJoin.addEventListener('click', switchForm);
 closeLogin.addEventListener('click', closeModal);
 closeJoin.addEventListener('click', closeModal);
-modal.addEventListener('click', closeModal);
+// modal.addEventListener('click', closeModal);
 
 
 // window.onload = openAuthForm();

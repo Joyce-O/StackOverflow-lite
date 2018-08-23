@@ -6,6 +6,7 @@
 
 .container {
     display: grid;
+    overflow: hidden;
     height: 100vh;
     width: 100vw;
     grid-template-rows: 20% 80%;
@@ -125,17 +126,16 @@ button::-moz-focus-inner {
 }
 
 .sidebar-1 {
-    grid-row-gap: 20px;
-    grid-area: sidebar-1;
-    grid-template-rows: 1fr 3fr;
-    display: grid;
+    height: 100%;
     padding: 10px;
+    background: rgba(53, 66, 74, 0.2);
    
 }
 
 .main {
     display: grid;
     margin: 20px;
+    margin-top: 2px;
     grid-template-columns: 200px 5fr 2fr;
     grid-template-areas: 
     "sidebar-1  content sidebar-2";
@@ -151,30 +151,35 @@ button::-moz-focus-inner {
     grid-row-end: -1;
 }
 
-.ask{
-    background: #3700B3;
-    color: white;
-    font-weight: 900;
-    font-stretch: condensed;
-    height: auto;
+.askBtn {
+    background-color: rgb(0, 45, 128); 
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    padding-left: 10px;
+    text-align-last:center; 
+
+}
+.askBtn a{
+    text-decoration: none;
+    color: rgb(244, 250, 248);
+    font-weight: bolder;
     font-size: 20px;
 
 }
 
 .sidebar-2 {
-    border-top-style: inset;
-    border-style: 1px dashed;
-    background-color: rgb(236, 225, 225);
-    grid-area: sidebar-2;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    margin-top: 10px;
-    padding-bottom: 300px;
+    height: 100%;
+    padding: 10px;
+    background: rgba(53, 66, 74, 0.2);
+
     
 }
 .content {
     display: grid;
     grid-area: content;
+    grid-template-columns: 1fr 2fr;
     padding:20px;
     border: 1px hidden darkolivegreen;
 
@@ -187,6 +192,7 @@ li {
     margin: 40px;
     list-style-type: square;
 } */
+
 
 .ask-ques {
     display: grid;
@@ -223,7 +229,7 @@ li {
      display: none; 
 }
 
- .modal{
+.modal{
     width: 320px;
     height: auto;
     background: linear-gradient(
@@ -297,7 +303,7 @@ li {
     text-decoration: none;
     color: rgba(226, 135, 226, 0.589);
 }
-  #signin {
+#signin {
     margin-top: 30px;
 }
 
@@ -309,4 +315,91 @@ li {
 
 #email_label {
     padding-bottom: 20px;
+}
+
+.stat {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: rgb(66, 32, 12);
+}
+.tpo  a {
+    text-decoration: none;
+    padding-left: 20px;
+    font-size: 18px;
+}
+/* .square {
+    text-align: center;
+    height: 60px;
+    width: 75px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid turquoise;
+}
+.square p {
+    padding-right: 20px;
+} */
+ .vot { 
+    text-align: center;
+ }
+/* .vot p {
+    padding-top: 10px;
+    /* color: brown; */
+
+#vote2 {
+    padding-top: 15px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#square2 {
+    padding-top: 15px;
+    margin-top: 50px;
+    text-align: center;
+    height: 55px;
+    width: 75px;
+    padding-right: 10px;
+    margin-left: 0;
+    /* padding: 10px; */
+    background-color: white;
+    border:  1px solid turquoise;
+}
+
+#vies2 {
+    padding-top: 15px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+}
+
+.quest {
+    list-style: none;
+    padding-left: 20px;
+    margin: 10px;
+    padding-top: 25px;
+    margin-bottom: 20px;
+}
+.asker1 {
+    padding-top: 40px;
+    display:inline;
+    padding-left: 80px;
+    margin: 20px;;
+    color: #3700B3;
+}
+.asker {
+    display: inline;
+    text-align-last: start;
+    color: #3700B3;
+}
+#freq {
+    font-style: normal;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.listSide li {
+    list-style: none;
+    font-weight: 200;
+    margin-bottom: 20px;
 }
