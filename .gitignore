@@ -7,12 +7,14 @@ erl_crash.dump
 *.ez
 *.beam
 /config/*.secret.exs
-.env
+<<<<<<< HEAD
+/Joyce/
+node_modules/
+.nyc_output/
+=======
+node_modules/
+package-lock.json
+coverage
 .nyc_output/
 
-coverage/
-
-node_modules/
-
-package-lock.json
-
+>>>>>>> 3b574419a5d18abca0c1cbdf1f63e9f842b27444

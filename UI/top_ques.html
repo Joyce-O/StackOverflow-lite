@@ -4,26 +4,25 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" href="image/favicon.ico" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="img/favicon.ico" />
   <title>StackOverflow-lite</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <script src="js/main.js"></script>
 </head>
 
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo-section">
-        <div class="logo">
-          <img id="img" src="image/favicon-1024.png" alt="icon">
-        </div>
-        <div class="stack">
-          <p>StackOverflow-lite</p>
-        </div>
-      </div>
-      <div class="search-box">
-        <input type="text">
-        <input type="submit" value="Search">
+      <header id="headtitle">
+        <img id="img" src="image/favicon-1024.png" alt="StackOverflow-lite icon"> StackOverflow-lite</header>
+      <div>
+        <form class="search" action="/index.html">
+          <input type="text" placeholder="Search.." id="search">
+          <button type="submit">submit</i>
+          </button>
+        </form>
       </div>
       <div class="home">
         <a id="home" href="#">Home</a>
@@ -31,73 +30,81 @@
         <a id="home" href="#">Contact</a>
       </div>
       <div class="login-area">
-        <button class="join" id="join">Join Now</button>
-        <button class="login" id="login">Login</button>
+        <img src="image/download.jpg" alt="profile name" width="20px">
+        <h4>Tepa Lao</h4>
       </div>
     </div>
     <div class="main">
       <aside>
         <div class="sidebar-1">
-          <p class="askBtn">
-            <a class="ask" href="ask_ques.html">Ask Question</a>
-          </p>
-          <p class="tpo">
-            <a id="top" href="top_ques.html"> Top Questions</a>
-          </p>
+          <button class="btn ask">Ask a question</button>
+          <ul class="left_bar">
+            <li>
+              <a id="top" href="#content"> Top Questions</a>
+            </li>
+            <li>
+              <a href="#">Users</a>
+            </li>
+            <li>
+              <a href="#">Terms and conditions</a>
+            </li>
+          </ul>
+
         </div>
       </aside>
       <section class="content">
-        <div>
-          <ul>
-            <li class="quest">
-              <h2>Is java same as Javascript?</h2>
-              <p>how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]</p>
-              <p class="asker">Josh Dayy </p>
-              <p class="asker1">Asked: 29/2/2010</p>
+        <fieldset class="fieldset">
 
-            </li>
-            <li class="quest">
-              <h2>Is java same as Javascript?</h2>
-              <p>how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]</p>
-              <p class="asker">Josh Dayy </p>
-              <p class="asker1">Asked: 29/2/2010</p>
+          <div class="question">
+            <p id="all_quest"> All Questions</p>
+            <ul>
 
-            </li>
-            <li class="quest">
-              <h2>Is java same as Javascript?</h2>
-              <p>how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]</p>
-              <p class="asker">Josh Dayy </p>
-              <p class="asker1">Asked: 29/2/2010</p>
+              <li class="quest">
+                <h2>Is java same as Javascript?</h2>
+                <p>What is the difference between Java and Javascript?</p>
+                <p class="asker">Josh Dayy </p>
+                <p class="asker">Asked: 29/2/2010</p>
 
-            </li>
-            <li class="quest">
-              <h2>Is java same as Javascript?</h2>
-              <p>how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]how to logout from stackoverflow [duplicate]</p>
-              <p class="asker">Josh Dayy </p>
-              <p class="asker1">Asked: 29/2/2010</p>
-            </li>
-          </ul>
+              </li>
+              <li class="quest">
+                <h2>Is java same as Javascript?</h2>
+                <p>What is the difference between Java and Javascript?</p>
+                <p class="asker">Josh Dayy </p>
+                <p class="asker">Asked: 29/2/2010</p>
 
-        </div>
+              </li>
+              <li class="quest">
+                <h2>How do I do...?</h2>
+                <p>What is the difference between Java and Javascript?</p>
+                <p class="asker">Hoh Chuk </p>
+                <p class="asker">Asked: 09/2/2010</p>
+
+              </li>
+            </ul>
+        </fieldset>
       </section>
       <aside>
         <div class="sidebar-2">
-          <ul class="listSide">
-            <p id="freq">Frequently Questions</p>
-            <li> What can I do when getting “We are no longer accepting questions/answers from this account”?</li>
-            <li>When to flag an answer as “not an answer”? Why did I gain/lose reputation? Can I audit my reputation history?</li>
-            <li>What can I do about getting a sudden flood of revenge downvotes?</li>
-            <li> When should I make edits to code?</li>
-            <li> When is it appropriate to create a tag, and how does it work?</li>
-            <li>Why we're not customer support for [your favorite company] How do I format my code blocks?</li>
-            <li> What is the process for tag removal (burnination)?</li>
-            <li> Why isn't providing feedback mandatory on downvotes, and why are ideas suggesting such shot down?</li>
+          <ul class="widget-statistic">
+            <li id="questions-count">
+              <p>Questions</p>
+              <p>
+                <span>20</span>
+              </p>
+            </li>
+            <li class="members-count">
+              <p>Members</p>
+              <span>10</span>
+              </p>
+            </li>
+            <a id="link" href="#">Jobs</a>
           </ul>
+
         </div>
       </aside>
-    </div>
+      </div>
 
-    <script src="js/main.js"></script>
+    </div>
 </body>
 
 </html>

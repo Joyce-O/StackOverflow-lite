@@ -8,63 +8,31 @@
     <title>StackOverflow-lite</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="main.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="modal1">
-            <center>
-                <div class="modal login2">
-                    <span class="close" id="closeLogin">&times;</span>
-                    <br>
-                    <br>
-                    <h1>Login Here</h1>
-                    <form class="formModal" id="signin" action="">
-                        <label for="Username">Username</label>
-                        <input type="text" required name="username" id="username1" placeholder="Enter Username">
-                        <label for="password">Password</label>
-                        <input type="password" required name="password" id="password1" placeholder="Input your password">
-                        <input id="signin-btn" type="submit" value="Submit">
-                        <button id="toggleJoin" class="join modal_submit">Don't have an account?</button>
-                    </form>
-                </div>
-                <div class="modal signup2">
-                    <span class="close" id="closeJoin">&times;</span>
-                    <br>
-                    <br>
-                    <h1>Sign up</h1>
-                    <form class="formModal" autocomplete="off" action="">
-                        <label for="name">Full Name</label>
-                        <input required type="text" name="name" id="name" placeholder="Enter your Full Name">
-
-                        <label for="username">Username</label>
-                        <input type="text" required name="username" id="username" placeholder="Create username">
-
-                        <label id="email_label" for="email">Email</label>
-                        <input type="text" required name="email" id="email" placeholder="example@mail.com">
-
-                        <label for="password">Password</label>
-                        <input type="password" name="password" required id="password" placeholder="Create password">
-
-                        <input id="signup-btn" type="submit" value="Submit">
-                        <button id="toggleLogin" class="login modal_submit">Already have an account?</button>
-                    </form>
-                </div>
-            </center>
-        </div>
-
         <div class="header">
+            <header id="title">
+                <img id="img" src="image/favicon-1024.png" alt="icon" width="40px"> StackOverflow-lite
+            </header>
+            <div class="search-box">
+                <input type="text">
+                <input type="submit" value="Search">
             <div class="logo-section">
                 <div class="logo">
                     <img id="img" src="image/favicon-1024.png" alt="icon">
                 </div>
-                <div class="stack">
-                    <p>StackOverflow-lite</p>
+                <div class="stack"><p>StackOverflow-lite</p>
                 </div>
             </div>
-            <div class="search-box">
-                <input type="text">
-                <input type="submit" value="Search">
+            <div>
+                <form class="search" action="/index.html">
+                    <input type="text" placeholder="Search.." id="search">
+                    <button id="search_button" type="submit">submit</i>
+                    </button>
+                </form>
             </div>
             <div class="home">
                 <a id="home" href="#">Home</a>
@@ -72,127 +40,73 @@
                 <a id="home" href="#">Contact</a>
             </div>
             <div class="login-area">
-                <button class="join" id="join">Join Now</button>
-                <button class="login" id="login">Login</button>
+                <button id="join">Join Now</button>
+                <button id="login">Login</button>
             </div>
         </div>
         <div class="main">
             <aside>
                 <div class="sidebar-1">
-                    <p class="askBtn"><a class="ask" href="ask_ques.html">Ask Question</a></p>
-                    <p class="tpo"><a id="top" href="top_ques.html"> Top Questions</a></p>
-                </div>
-            </aside>
-            <section class="content">           
-                    <div class="stat">
-                    <div class="vot">
-                        <div id="vote2">
-                            <p>2</p>
-                            <label for="votes">Votes</label>
-                        </div>
-                        <div id="vote2">
-                            <p>4</p>
-                            <label for="votes">Votes</label>
-                        </div>
-                        <div id="vote2">
-                            <p>4</p>
-                            <label for="votes">Votes</label>
-                        </div>
-                        <div id="vote2">
-                            <p>4</p>
-                            <label for="votes">Votes</label>
-                        </div>
-                    </div>
-                    <div class="square">
-                        <div id="square2">
-                            <p>6</p>
-                            <label for="votes">Answers</label>
-                        </div>
-                        <div id="square2">
-                            <p>6</p>
-                            <label for="votes">Answers</label>
-                        </div>
-                        <div id="square2">
-                            <p>6</p>
-                            <label for="votes">Answers</label>
-                        </div>
-                        <div id="square2">
-                            <p>6</p>
-                            <label for="votes">Answers</label>
-                        </div>
-                    </div>
-                    <div class="vot">
-                        <div id="vies2">
-                            <p>2</p>
-                            <label for="votes">Views</label>
-                        </div>
-                        <div id="vies2">
-                            <p>5</p>
-                            <label for="votes">Views</label>
-                        </div>
-                        <div id="vies2">
-                            <p>5</p>
-                            <label for="votes">Views</label>
-                        </div>
-                        <div id="vies2">
-                            <p>5</p>
-                            <label for="votes">Views</label>
-                    </div>    </div>
-            </div>
- 
-                <div>
-                    <ul>
-                        <li class="quest">
-                            <h2>Is java same as Javascript?</h2>
-                            <p>What is the difference between Java and Javascript?</p>
-                            <p class="asker">Josh Dayy </p>
-                            <p class="asker1">Asked: 29/2/2010</p>
-
+                    <a class="btn ask" href="ask_ques.html">Ask a question</a>
+                    <ul class="left_bar">
+                        <li>
+                            <a id="top" href="top_ques.html"> Top Questions</a>
                         </li>
-                        <li class="quest">
-                            <h2>Is java same as Javascript?</h2>
-                            <p>What is the difference between Java and Javascript?</p>
-                            <p class="asker">Josh Dayy </p>
-                            <p class="asker1">Asked: 29/2/2010</p>
-
+                        <li>
+                            <a href="profile.html">Users</a>
                         </li>
-                        <li class="quest">
-                            <h2>Is java same as Javascript?</h2>
-                            <p>how to logout from stackoverflow [duplicate]</p>
-                            <p class="asker">Josh Dayy </p>
-                            <p class="asker1">Asked: 29/2/2010</p>
-
-                        </li>
-                        <li class="quest">
-                            <h2>Is java same as Javascript?</h2>
-                            <p>What is the difference between Java and Javascript?</p>
-                            <p class="asker">Josh Dayy </p>
-                            <p class="asker1">Asked: 29/2/2010</p>
+                        <li>
+                            <a href="#">Terms and conditions</a>
                         </li>
                     </ul>
-
                 </div>
+            </aside>
+            <section class="content">
+                <fieldset class="fieldset">
+                    <form class="form form1">
+                        <div class="login-area">
+                            <h4>
+                                <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong>
+                            </h4>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
+                                cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+                                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
+                                lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                                per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
+                                cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+                                ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
+                                lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                                per inceptos himenaeos. Curabitur sodales ligula in libero. </p>
+                        </div>
+                    </form>
+                </fieldset>
             </section>
             <aside>
                 <div class="sidebar-2">
-                    <ul class="listSide">
-                        <p id="freq">Frequently Questions</p>
-                        <li> What can I do when getting “We are no longer accepting questions/answers from this account”?</li>
-                        <li>When to flag an answer as “not an answer”?
-                                Why did I gain/lose reputation? Can I audit my reputation history?</li>
-                        <li>What can I do about getting a sudden flood of revenge downvotes?</li>
-                        <li> When should I make edits to code?</li>
-                        <li> When is it appropriate to create a tag, and how does it work?</li>
-                        <li>Why we're not customer support for [your favorite company]
-                                How do I format my code blocks?</li>
-                        <li>  What is the process for tag removal (burnination)?</li>
-                        <li> Why isn't providing feedback mandatory on downvotes, and why are ideas suggesting such shot down?</li>
-                      </ul>     
+                    <ul class="widget-statistic">
+                        <li id="questions-count">
+                            <p>Questions</p>
+                            <p>
+                                <span>20</span>
+                            </p>
+                        </li>
+                        <li class="members-count">
+                            <p>Members</p>
+                            <span>10</span>
+                            </p>
+                        </li>
+                        <a id="link" href="#">Jobs</a>
+                    </ul>
+
                 </div>
             </aside>
         </div>
 
-        <script src="js/main.js"></script>
 </body>
 
 </html>
