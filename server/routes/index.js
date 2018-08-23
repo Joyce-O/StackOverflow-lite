@@ -1,6 +1,7 @@
-import answerRoute from './answerRoute';
-import questionRoute from './questionsRoute';
+import answerRoutes from './answerRoute';
+import questionRoutes from './questionsRoute';
+import otherRoutes from './otherRoutes';
 
 export {
-    answerRoute, questionsRoute
+    answerRoutes, questionRoutes, otherRoutes
 }

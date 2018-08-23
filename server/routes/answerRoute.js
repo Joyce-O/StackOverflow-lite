@@ -1,6 +1,6 @@
 import express from 'express';
 import answerClass from '../controllers/answerHandler';
-import answerValidator from '../middlewares/answerValidator';
+import answerValidator from '../middlewares/answerVallidator';
 import QuestionsValidator from '../middlewares/QuestionsValidator';
 
 

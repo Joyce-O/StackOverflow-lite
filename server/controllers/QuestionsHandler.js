@@ -4,7 +4,8 @@ class QuestionsHandler {
     static getAllQuestions (request, response) {
         response.status(200)
         .json ({
-            message: 'List of all questions', questions
+            status: 'Successful', 
+            allQuestions: questions
         });
     }
 
@@ -12,8 +13,8 @@ class QuestionsHandler {
         const {requestedQues} = request.body;
         response.status(200)
           .json({
-            message: 'Request was successful',
-            requestedQues
+            status: 'Successful',
+            question: requestedQues
           });
       
     }
@@ -35,14 +36,14 @@ class QuestionsHandler {
           });
     }
 
-    static getQuestion(request, response) {
-      const { requestedQues } = request.body;
-      response.status(200)
-        .json({
-          message: 'Request was successful',
-          requestedQues
-        });
-    }
+    // static getQuestion(request, response) {
+    //   const { requestedQues } = request.body;
+    //   response.status(200)
+    //     .json({
+    //       message: 'Request was successful',
+    //       requestedQues
+    //     });
+    // }
     static deleteQuestion(request, response) {
       const { requestedQues } = request.body;
       questions.splice(requestedQues.id - 1, 1);

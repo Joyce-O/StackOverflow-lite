@@ -14,7 +14,7 @@ static postAnswer(request, response) {
     return response.status(201)
       .json({
         message: 'Thank you! Your answer was recorded',
-        requestedQues
+        question: requestedQues
       });
   }
 }

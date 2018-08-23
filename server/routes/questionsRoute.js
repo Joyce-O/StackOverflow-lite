@@ -12,11 +12,5 @@ router.get('/questions/:questionId', getQuestionValidator, getQuestion);
 router.post('/questions', postQuestionValidator, postQuestion);
 router.delete('/questions/:questionId', getQuestionValidator, deleteQuestion);
 
-router.get('/', (request, response) => {
-    response.status(200)
-      .json({
-        message: 'This is stackOverflow-lite. Post questions, view questions, post answers, and view answers to question'
-      });
-  });
 
 export default router;
