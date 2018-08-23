@@ -1,13 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import router from './server/routes/questionsRoute';
+import { questionsRouter, answerRouter } from './server/routes/index';
+// import answerRouter from './server/routes/answerRoute';
 
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-console.log('HEREER');
-app.use('/api/v1', router);
+// console.log('HEREER');
+app.use('/api/v1', questionsRouter);
+app.use('/api/v1', answerRouter);
 
 router.all('/*', (request, response) => {
     response.status(404)
