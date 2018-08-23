@@ -1,10 +1,11 @@
-import questions from '../sessionData/questionsObj';
+import questions from '../dummyData/questionsObj';
 
 class QuestionsHandler {
     static getAllQuestions (request, response) {
         response.status(200)
         .json ({
-            message: 'List of all questions', questions
+            status: 'Successful', 
+            allQuestions: questions
         });
     }
 
@@ -12,8 +13,8 @@ class QuestionsHandler {
         const {requestedQues} = request.body;
         response.status(200)
           .json({
-            message: 'Request was successful',
-            requestedQues
+            status: 'Successful',
+            question: requestedQues
           });
       
     }
@@ -35,31 +36,14 @@ class QuestionsHandler {
           });
     }
 
-    static getQuestion(request, response) {
-      const { requestedQues } = request.body;
-      response.status(200)
-        .json({
-          message: 'Request was successful',
-          requestedQues
-        });
-    }
-  
-    static postAnswer(request, response) {
-      const { newAnswer, requestedQues } = request.body;
-      const id = requestedQues.answer.length + 1;
-      const submittedAnswer = {
-        id,
-        newAnswer
-      };
-      requestedQues.answer.push(submittedAnswer);
-      requestedQues.answer.reverse();
-      return response.status(201)
-        .json({
-          message: 'Thank you! Your answer was recorded',
-          requestedQues
-        });
-    }
-
+    // static getQuestion(request, response) {
+    //   const { requestedQues } = request.body;
+    //   response.status(200)
+    //     .json({
+    //       message: 'Request was successful',
+    //       requestedQues
+    //     });
+    // }
     static deleteQuestion(request, response) {
       const { requestedQues } = request.body;
       questions.splice(requestedQues.id - 1, 1);

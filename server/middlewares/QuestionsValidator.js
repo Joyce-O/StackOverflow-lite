@@ -1,19 +1,28 @@
-import questions from '../sessionData/questionsObj';
+import questions from '../dummyData/questionsObj';
 
 
 class QuestionsValidator {
 //Validates questionId
     static getQuestionValidator (request, response, next) {
         const {questionId} = request.params;
-        const requestedQues = questions.find(question => question.id === parseInt(questionId, 10));
+        if (!Number(questionId)) {
+          // console.log(Number(questionId));
+          return response.status(404)
+          .json ({
+              status: 'Error',
+              message: 'Invalid question ID'
+          });
+        }
+
+        const requestedQues = questions.find(question => question.id === Number(questionId));
 
         if (!requestedQues) {
-            return response.status(404)
-            .json ({
-                status: 'Error',
-                message: 'Invalid question ID'
-            });
-        }
+          return response.status(404)
+           .json ({
+               status: 'Error',
+               message: 'Question ID not found.'
+           });
+         }
         request.body.requestedQues = requestedQues;
         next();//End get question validation
     }
