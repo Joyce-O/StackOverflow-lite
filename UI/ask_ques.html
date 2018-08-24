@@ -7,87 +7,98 @@
     <link rel="icon" href="image/favicon.ico" />
     <title>StackOverflow-lite</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <header id="title">
-                <img id="img" src="image/favicon-1024.png" alt="icon" width="40px"> StackOverflow-lite
-            </header>
-            <div>
-                <form class="search" action="/index.html">
-                    <input type="text" placeholder="Search.." id="search">
-                    <button id="search_button" type="submit">submit</i>
-                    </button>
-                </form>
+            <div class="logo-section">
+                <div class="logo">
+                    <img id="img" src="image/favicon-1024.png" alt="icon">
+                </div>
+                <div class="stack">
+                    <a href="index.html"><p>StackOverflow-lite</p></a>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text">
+                <input type="submit" value="Search">
             </div>
             <div class="home">
-                <a id="home" href="#">Home</a>
-                <a id="home" href="#">About</a>
-                <a id="home" href="#">Contact</a>
+                <a id="home" href="index.html">Home</a>
+                <a id="home" href="top_ques.html">Top questions</a>
             </div>
             <div class="login-area">
-                <img src="image/download.jpg" alt="profile name" width="20px">
-                <h4>Tepa Lao</h4>
-              </div>
+                <div class="dropdown" style="float:right;">
+                    <span id="avatarName"><img id="avatar" src="image/download.jpg" alt="profile name" width="20px">&#10136</span>
+                    
+                    <div class="dropdown-content">
+                        <a href="profile.html">profile</a>
+                        <a href="index.html">Log out</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="main">
             <aside>
                 <div class="sidebar-1">
-                    <button class="btn ask">Ask a question</button>
-                    <ul class="left_bar">
-                        <li>
-                            <a id="top" href="top_ques.html"> Top Questions</a>
-                        </li>
-                        <li>
-                            <a href="#">Users</a>
-                        </li>
-                        <li>
-                            <a href="#">Terms and conditions</a>
-                        </li>
+                    <ul class="listSide">
+                        <p id="freq">Categories</p>
+                        <li>&#10140 JavaScript</li>
+                        <li>&#10140 Server Side</li>
+                        <li>&#10140 Web Building</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 JavaScript</li>
+                        <li>&#10140 Server Side</li>
+                        <li>&#10140 Web Building</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 HTML and CSS</li>
+                        <li>&#10140 HTML and CSS</li>
                     </ul>
                 </div>
             </aside>
-            <section class="content">
-                <fieldset class="fieldset">
-                    <form class="form form1">
-                        <div class="ask-ques">
-                            <p>Ask Questions</p>
-                            <div id="ques-title"><label for="ques-title">Title</label>
-                            <textarea id="ques-title" placeholder="Enter your sentence..." required>                   
-                            </textarea></div>
-                           <div id="ques-body"><label for="ques-body">Body</label>
-                            <textarea id="ques-body" placeholder="Enter your sentence..." required>                   
-                            </textarea></div>
-                            <p><button class="btn ques-btn" type="button" onclick="displayWord()">submit</button></p>
-                        </div>
-                    </form>
-                </fieldset>
-            </section>
-            <aside>
-                <div class="sidebar-2">
-                    <ul class="widget-statistic">
-                        <li id="questions-count">
-                            <p>Questions</p>
-                            <p>
-                                <span>20</span>
-                            </p>
-                        </li>
-                        <li class="members-count">
-                            <p>Members</p>
-                            <span>10</span>
-                            </p>
-                        </li>
-                        <a id="link" href="#">Jobs</a>
-                    </ul>
+            <div "formQues">
+                <center>
+                    <h1 id="h1">Ask a question</h1>
+                </center>
+                <center>
+                    <form class="modal2" action="">
+                        <label for="name">Title</label>
+                        <input required type="text" name="title" id="title">
 
+                        <label for="username">Content</label>
+                        <input type="text" required name="content" id="questContent">
+
+                        <label for="username">Tags</label>
+                        <input type="text" required name="tag">
+
+                        <input id="signup-btn" type="submit" value="Submit">
+                    </form>
+                </center>
+            </div>
+            <aside>
+                <div class="sidebar-1">
+                    <ul class="listSide">
+                        <p id="freq">Frequently Questions</p>
+                        <li> What can I do when getting “We are no longer accepting questions/answers from this account”?</li>
+                        <li>When to flag an answer as “not an answer”? Why did I gain/lose reputation? Can I audit my reputation
+                            history?
+                        </li>
+                        <li>What can I do about getting a sudden flood of revenge downvotes?</li>
+                        <li> When should I make edits to code?</li>
+                        <li> When is it appropriate to create a tag, and how does it work?</li>
+                        <li>Why we're not customer support for [your favorite company] How do I format my code blocks?</li>
+                        <li> What is the process for tag removal (burnination)?</li>
+                        <li> Why isn't providing feedback mandatory on downvotes, and why are ideas suggesting such shot down?</li>
+                    </ul>
                 </div>
             </aside>
         </div>
-
 </body>
 
 </html>
